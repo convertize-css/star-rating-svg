@@ -42,6 +42,7 @@
 	// The actual plugin constructor
   var Plugin = function( element, options ) {
     var _rating;
+    var _size;
     var newRating;
     var roundFn;
 
