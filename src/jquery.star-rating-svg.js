@@ -51,7 +51,7 @@
 
     // grab rating if defined on the element
     _rating = this.$el.data('rating') || this.settings.initialRating;
-    _size = this.$el.data('size') || this.settings.initialRating;
+    _size = this.$el.data('size') || this.settings.starSize;
 
     // round to the nearest half
     roundFn = this.settings.forceRoundUp ? Math.ceil : Math.round;
@@ -60,9 +60,7 @@
       rating: newRating
     };
 
-    this._state = {
-      starSize: roundFn( _size ).toFixed(0)
-    };
+    this.settings.starSize = roundFn( _size ).toFixed(0);
 
     // create unique id for stars
     this._uid = Math.floor( Math.random() * 999 );
